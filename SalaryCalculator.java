@@ -8,6 +8,11 @@ All salespeople get a payment of $1000 a week.
 Salespeople who exceeds 10 sales get an additional bonus of $250.
 */
 
+/*
+If Statement.
+If a certain situation occers, do something and
+    then go back to the main flow.
+*/
 
 public class SalaryCalculator {
 
