@@ -7,7 +7,10 @@ Learning how to program with the most recent Long-Term-Support(LTS) release, Jav
 
 
 ## Order of Business
+```python
+
 ./run.sh
 bash start.sh
+```
 
 
