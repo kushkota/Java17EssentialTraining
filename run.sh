@@ -1,39 +1,49 @@
 #!/bin/bash
+clear
 
 javac.exe $1
 
 # check command succeeded
 result=$(echo $?)
 
-echo $result
 success=0
-echo $success
 
  if [ "$result" -eq "$success" ]
 then
+    echo -e "Compiling package...\n"
     $(javac.exe -d . $1)
-    echo "What is your package name?"
+
+    echo "Listing directory in tree-like format"
+    tree -d
+
+    echo -e "\nWhat is your package name?"
+    
     read PKG
     
+    listDirectory=$(echo */)
+    listDirectoryFilter=$(echo $listDirectory | cut -f 1 -d '/')
+    
     extension=$(echo $1 | cut -f 1 -d '.')
-
-    echo "$extension"
-    echo "Your package directory is $PKG.$extension"
-
-    echo "PROCEED? Y/n"
-    read Input
-
-    if [ "$Input" == "Y" ]
+    echo "$PKG"
+    if [ "$listDirectoryFilter" = "$PKG" ]
     then
-        # nohup (1)            - run a command immune to hangups, with output to a non-tty
-        # nohup: redirecting stderr to stdout
-        $(nohup java.exe -cp . $PKG.$extension > output.txt /dev/null 2>&1 &)
-        
+        echo "Your package directory is $PKG.$extension"
+        echo "PROCEED? Y/n"
+        read Input
+        if [ "$Input" == "Y" ]
+        then
+            #echo "Run java command on terminal: java -cp . $PKG,$extension"
+            echo "Run bash start.sh on terminal"
+            echo "java.exe -cp . $PKG.$extension" > start.sh
+            exit
+        else
+            echo "Please check your package syntax."
+        fi
     else
-        echo "Check your settings!"
+        echo "Check your directory listings!"
     fi
-else
-    echo "Complie Error!"
+else 
+    echo "Compile Error!"
  fi
 
 
