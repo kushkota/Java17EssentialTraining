@@ -6,11 +6,17 @@ Learning how to program with the most recent Long-Term-Support(LTS) release, Jav
 
 
 
-## Order of Business
+## Development
+
 ```python
 
 ./run.sh
 bash start.sh
 ```
+Run `./run.sh` to compile package and `bash start.sh` to execute java
+
+## Project
+https://github.com/kushkota/Java17EssentialTraining
+
 
 
