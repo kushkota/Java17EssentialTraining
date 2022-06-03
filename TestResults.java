@@ -50,7 +50,7 @@ public class TestResults {
              */
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Enter your test score:");
+            System.out.println("\nEnter your test score:");
 
             // readline() returns String value, therefore parsing to int
             score = Integer.parseInt(reader.readLine());
