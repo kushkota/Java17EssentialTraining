@@ -10,7 +10,7 @@ Learning how to program with the most recent Long-Term-Support(LTS) release, Jav
 
 ```python
 
-./run.sh
+./run.sh <jave_file>
 bash start.sh
 ```
 Run `./run.sh` to compile package and `bash start.sh` to execute java
