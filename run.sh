@@ -11,7 +11,7 @@ success=0
  if [ "$result" -eq "$success" ]
 then
     echo -e "Compiling package...\n"
-    $(javac.exe -d . $1)
+    javac.exe -d . $1
 
     echo "Listing directory in tree-like format"
     tree -d
@@ -38,14 +38,20 @@ then
             read option
             if [ "$option" == "Y" ]
             then
-                echo "echo -e '\nCreating JAR file!\n'" > startJar.sh
-                echo "jar.exe cvmf manifest.txt test.jar $listDirectory$extension.class" >> startJar.sh
-                echo "java.exe -jar test.jar" >> startJar.sh
+                echo -e "\nCreating JAR file!\n"
+                # replacing 2nd item Manifest Main Class
+
+                search=$(awk '{print $2}' manifest.txt) 
+                replace=$PKG.$extension
+                sed -i "s/$search/$replace/" manifest.txt
+
+                
+                jar.exe cvmf manifest.txt test.jar $listDirectory$extension.class
+                java.exe -jar test.jar
                 #$(jar.exe cvmf "manifest.txt" "test.jar" $listDirectory$extension.class)
-                echo -e "\nRun 'bash startJar.sh' on the terminal."
             else
-                echo "java.exe -cp . $PKG.$extension" > start.sh
-                echo "Run bash start.sh on terminal."
+                java.exe -cp . $PKG.$extension
+                
             fi
         else
             echo "Thank you for your visit!"
