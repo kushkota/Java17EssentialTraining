@@ -2,9 +2,6 @@
 
 Learning how to program with the most recent Long-Term-Support(LTS) release, Java 17.
 
-## Create and importing JAR files
-
-
 
 ## Development
 
@@ -19,6 +16,12 @@ Terminal
 $ javac.exe <java_file>
 $ javac.exe -d . <java_file> // forces compliler to create a package
 $ java -cp . <package.javaClass> 
+```
+
+Create and importing JAR files
+```python
+jar.exe cvmf manifest.txt <jar_file> <package/javaClass_file>
+java.exe -jar <jar_file>
 ```
 
 ## Project
