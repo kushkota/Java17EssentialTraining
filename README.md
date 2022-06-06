@@ -7,6 +7,11 @@ Learning how to program with the most recent Long-Term-Support(LTS) release, Jav
 
 ```python
 
+# clone a repository 
+$ git clone https://github.com/kushkota/Java17EssentialTraining
+
+cd Java17EssentialTraining
+
 ./run.sh <java_file>
 ```
 Run `./run.sh` to automate compile and run Java exection
