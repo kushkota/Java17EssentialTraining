@@ -16,12 +16,18 @@ Terminal
 $ javac.exe <java_file>
 $ javac.exe -d . <java_file> // forces compliler to create a package
 $ java -cp . <package.javaClass> 
+
+```python
+# manifest.txt 
+Main-Class: decision_structures.GradeMessage
+
+$ jar cvmf manifest.txt <jar_file> <package/javaClass_file>
 ```
 
 Create and importing JAR files
 ```python
-jar.exe cvmf manifest.txt <jar_file> <package/javaClass_file>
-java.exe -jar <jar_file>
+jar cvmf manifest.txt <jar_file> <package/javaClass_file>
+java -jar <jar_file>
 ```
 
 ## Project
