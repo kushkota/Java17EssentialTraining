@@ -18,21 +18,14 @@ $ javac.exe -d . <java_file> // forces compliler to create a package
 $ java -cp . <package.javaClass> 
 ```
 
+Create and importing JAR files
 ```python
 # manifest.txt 
 Main-Class: decision_structures.GradeMessage
 
-$ jar cvmf manifest.txt <jar_file> <package/javaClass_file>
-```
-
-Create and importing JAR files
-```python
 jar cvmf manifest.txt <jar_file> <package/javaClass_file>
 java -jar <jar_file>
 ```
 
 ## Project
 https://github.com/kushkota/Java17EssentialTraining
-
-
-
