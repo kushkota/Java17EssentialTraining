@@ -23,7 +23,7 @@ public class QuotaChecker {
         int quota = 10;
 
         //Get values for the unknown
-        System.out.println("How many sales did you make this week?");
+        System.out.println("\nHow many sales did you make this week?");
         Scanner scanner = new Scanner(System.in);
         int sales = scanner.nextInt();
         scanner.close();
@@ -31,7 +31,7 @@ public class QuotaChecker {
         //Quick detour for the bonus earners
         if (sales >= quota) {
 
-            System.out.println("Congrats! You've met your quota.");
+            System.out.println("\nCongrats! You've met your quota.");
         }
         else {
             int salesShort = quota - sales;
