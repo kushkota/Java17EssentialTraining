@@ -16,6 +16,7 @@ Terminal
 $ javac.exe <java_file>
 $ javac.exe -d . <java_file> // forces compliler to create a package
 $ java -cp . <package.javaClass> 
+```
 
 ```python
 # manifest.txt 
