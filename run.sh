@@ -1,4 +1,4 @@
-#!/bin/bash
+i#!/bin/bash
 clear
 
 javac.exe $1
@@ -12,6 +12,9 @@ success=0
 then
     echo -e "Compiling package...\n"
     javac.exe -d . $1
+    
+    package=$(head -n 1 $1)
+    echo -e "\n$package\n"
 
     echo "Listing directory in tree-like format"
     tree -d
@@ -20,11 +23,15 @@ then
     
     read PKG
     
-    listDirectory=$(echo */)
-    listDirectoryFilter=$(echo $listDirectory | cut -f 1 -d '/')
+    #Change
+    #listDirectory=$(echo */)
+    #listDirectoryFilter=$(echo $listDirectory | grep $package)
+    
+    packageFilter=$(echo $package | cut -f 1 -d ';' | awk '{print $2}')
     
     extension=$(echo $1 | cut -f 1 -d '.')
-    if [ "$listDirectoryFilter" = "$PKG" ]
+    
+    if [ "$packageFilter" = "$PKG" ]
     then
         echo -e "\nYour package directory is $PKG.$extension"
         echo "PROCEED? Y/n"
@@ -46,7 +53,7 @@ then
                 sed -i "s/$search/$replace/" manifest.txt
 
                 
-                jar.exe cvmf manifest.txt test.jar $listDirectory$extension.class
+                jar.exe cvmf manifest.txt test.jar $PKG/$extension.class
                 java.exe -jar test.jar
                 #$(jar.exe cvmf "manifest.txt" "test.jar" $listDirectory$extension.class)
             else

@@ -10,7 +10,7 @@ public static void main(String[] args) {
 	
 Scanner scanner = new Scanner(System.in);
 
-System.out.println("What is your favorite season to drink a coffee?");
+System.out.println("\nWhat is your favorite season to drink a coffee?");
 String season = null;
 season = scanner.next();
 
@@ -39,14 +39,14 @@ weather = "cold";
 weather = "hot";
 }
 
-System.out.println("What is the minimum cup of coffee you drink on your favorite season?");
+System.out.println("\nWhat is the minimum cup of coffee you drink on your favorite season?");
 int number = 0;
 number = scanner.nextInt();
 
 scanner.close();
 
 
-System.out.println("On a " + weather + " " + season + " day,\n" +
+System.out.println("\nOn a " + weather + " " + season + " day,\n" +
 "I drink a minimum of " + number + " cups\n" + "of coffee.");
 
 
